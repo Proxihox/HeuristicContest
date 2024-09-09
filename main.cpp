@@ -12,6 +12,8 @@ int dist2(int x1, int y1, int x2 = 0, int y2 = 0){
 }
 
 int gettime(int n, int W, vector<int> &x, vector<int> &y, vector<int> &w, int m, vector<int> &route);
+    // finish this function 
+
 
 int ans_checker(int n, int W, vector<int> &x, vector<int> &y, vector<int> &w, int m, vector<int> &route){
     if (route.size() != m || m == 0){
