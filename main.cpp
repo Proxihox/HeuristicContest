@@ -52,12 +52,13 @@ int ans_checker(int n, int W, vector<int> &x, vector<int> &y, vector<int> &w, in
             visited[route[i] - 1] = true;
         }
     }
+
     for (int i = 0; i < n; i++){
         if (not visited[i]){
             return 0;
         }
     }
-    
+
     int d2max = 0, d2min = INF;
     for (int i = 0; i < n; i++){
         for (int j = i + 1; j < n; j++){
@@ -81,7 +82,6 @@ int ans_checker(int n, int W, vector<int> &x, vector<int> &y, vector<int> &w, in
     int uppermin = getTime(n, W, x, y, w, n + 2, dumb_route);
     
     int t = getTime(n, W, x, y, w, m, route);
-    
     if (t >= uppermin){
         return 0;
     }
@@ -112,6 +112,11 @@ int32_t main(int32_t argc, char *argv[]){
     // route.push_back(0); // We have to return to origin finally
     route = {0,2,1,0,3,0,4,5,0};
     int m = route.size(); // m is the total number of stops in the route
-    cout << "Score : " << ans_checker(n,W,x,y,w,m,route) << "\n";
+
+    // printing the output
+    cout << m << "\n";
+    for(auto x:route) cout << x << " ";
+    // comment the below line out while making final submission
+    cout << "\nScore : " << ans_checker(n,W,x,y,w,m,route) << "\n"; 
 }
 
